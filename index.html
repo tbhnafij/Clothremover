@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>  </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body class="bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 min-h-screen flex items-center justify-center">
+
+          <div class="bg-white shadow-2xl rounded-2xl p-10 m-6 w-full max-w-lg">
+              <h2 class="text-3xl font-bold text-center text-indigo-700 mb-6">   </h2>
+                  
+                      <form id="submit-form" class="space-y-5">
+                            
+                                  <div>
+                                          <label for="from_name" class="block text-gray-700 font-semibold mb-1"> :</label>
+                                                  <input type="text" id="from_name" name="from_name" required 
+                                                                 class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                                                                       </div>
+
+                                                                             <div>
+                                                                                     <label for="whatsapp" class="block text-gray-700 font-semibold mb-1">WhatsApp :</label>
+                                                                                             <input type="text" id="whatsapp" name="whatsapp" required 
+                                                                                                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                                                                                                                  </div>
+
+                                                                                                                        <div>
+                                                                                                                                <label for="message" class="block text-gray-700 font-semibold mb-1">   :</label>
+                                                                                                                                        <textarea id="message" name="message" required 
+                                                                                                                                                          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                                                                                                                                                                </div>
+
+                                                                                                                                                                      <div>
+                                                                                                                                                                              <label for="image" class="block text-gray-700 font-semibold mb-1">  ( ):</label>
+                                                                                                                                                                                      <input type="text" id="image" name="image" placeholder="  " 
+                                                                                                                                                                                                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                                                                                                                                                                                                           </div>
+
+                                                                                                                                                                                                                 <button type="submit" 
+                                                                                                                                                                                                                               class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                             </button>
+                                                                                                                                                                                                                                                 </form>
+                                                                                                                                                                                                                                                   </div>
+
+                                                                                                                                                                                                                                                     <!-- EmailJS SDK -->
+                                                                                                                                                                                                                                                       <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+                                                                                                                                                                                                                                                         <script>
+                                                                                                                                                                                                                                                             (function(){
+                                                                                                                                                                                                                                                                   emailjs.init("x6xce8y_os0po_zF7"); //  Public Key
+                                                                                                                                                                                                                                                                       })();
+
+                                                                                                                                                                                                                                                                           document.getElementById("submit-form").addEventListener("submit", function(event){
+                                                                                                                                                                                                                                                                                 event.preventDefault();
+
+                                                                                                                                                                                                                                                                                       emailjs.sendForm("service_nlwgu4k", "template_mef1f44", this)
+                                                                                                                                                                                                                                                                                               .then(function(response) {
+                                                                                                                                                                                                                                                                                                         alert("   !     ");
+                                                                                                                                                                                                                                                                                                                 }, function(error) {
+                                                                                                                                                                                                                                                                                                                           alert("  : " + error.text);
+                                                                                                                                                                                                                                                                                                                                   });
+                                                                                                                                                                                                                                                                                                                                       });
+                                                                                                                                                                                                                                                                                                                                         </script>
+                                                                                                                                                                                                                                                                                                                                         </body>
+                                                                                                                                                                                                                                                                                                                                         </html>
